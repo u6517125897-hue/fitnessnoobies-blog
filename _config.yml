@@ -9,6 +9,7 @@ timezone: Europe/Berlin
 future: true   # articles are committed at their publish time; avoids timezone edge cases
 lang: en
 logo: /assets/img/icon.png
+pinterest_url: "https://www.pinterest.com/fitnessnoobiesapp/"
 # --- kept in sync by the marketing agent (config.yaml) ---
 app_name: "FitnessNoobies"
 app_store_id: "6812446704"
