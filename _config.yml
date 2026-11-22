@@ -14,7 +14,7 @@ app_name: "FitnessNoobies"
 app_store_id: "6812446704"
 app_link: "https://apps.apple.com/app/apple-store/id6812446704?ct=blog-home&mt=8"
 goatcounter: ""
-pinterest_verify: ""
+pinterest_verify: "8201d92f2a918eb676e9c3c689761b05"
 # ----------------------------------------------------------
 plugins:
   - jekyll-feed
