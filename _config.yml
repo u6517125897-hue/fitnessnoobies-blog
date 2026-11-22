@@ -11,8 +11,8 @@ lang: en
 logo: /assets/img/icon.png
 # --- kept in sync by the marketing agent (config.yaml) ---
 app_name: "FitnessNoobies"
-app_store_id: ""
-app_link: "https://apps.apple.com/app/apple-store/id0000000000?ct=blog-home&mt=8"
+app_store_id: "6812446704"
+app_link: "https://apps.apple.com/app/apple-store/id6812446704?ct=blog-home&mt=8"
 goatcounter: ""
 pinterest_verify: ""
 # ----------------------------------------------------------
