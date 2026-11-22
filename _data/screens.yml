@@ -1,0 +1,13 @@
+# Real screenshots of the app (rendered from its web build with demo data).
+- src: /assets/img/screens/home.jpg
+  alt: Your day at a glance
+- src: /assets/img/screens/workout.jpg
+  alt: Workouts with a built-in rest timer
+- src: /assets/img/screens/meals.jpg
+  alt: Meals, calories and macros
+- src: /assets/img/screens/weight.jpg
+  alt: Your weight trend and goal
+- src: /assets/img/screens/exercises.jpg
+  alt: Searchable exercise library
+- src: /assets/img/screens/onboarding.jpg
+  alt: A guided start for your goal

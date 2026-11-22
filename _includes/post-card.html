@@ -1,0 +1,9 @@
+<a class="card" href="{{ include.post.url | relative_url }}">
+  {% if include.post.image %}<img src="{{ include.post.image | relative_url }}" alt="" loading="lazy" width="400" height="600">{% endif %}
+  <span class="card-body">
+    {% assign cat = site.data.categories | where: "slug", include.post.topic | first %}
+    {% if cat %}<span class="tag">{{ cat.name }}</span>{% endif %}
+    <strong>{{ include.post.title }}</strong>
+    <small>{{ include.post.description }}</small>
+  </span>
+</a>

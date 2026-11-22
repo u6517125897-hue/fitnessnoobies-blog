@@ -1,20 +1,87 @@
 ---
 layout: default
-title: Beginner gym & nutrition guides
+title: The simple gym app for beginners
 ---
-<section class="intro">
-  <h1>Gym guides for beginners</h1>
-  <p>{{ site.description }}</p>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">iPhone app · 5 days free</p>
+      <h1>The gym app for people who are new to the gym.</h1>
+      <p class="lead">Plan your workouts, train with a rest timer, track meals and macros, and watch your weight trend, all in one simple app.</p>
+      <div class="actions">{% include app-badge.html %}<a class="link" href="{{ '/blog/' | relative_url }}">Read the free guides →</a></div>
+    </div>
+    {% if site.data.screens and site.data.screens.size > 0 %}
+    <div class="phones">
+      {% for s in site.data.screens limit: 2 %}<img class="phone" src="{{ s.src | relative_url }}" alt="{{ s.alt }}" width="390" height="664">{% endfor %}
+    </div>
+    {% endif %}
+  </div>
 </section>
-<ul class="posts">
-{% for post in site.posts %}
-  <li>
-    <a href="{{ post.url | relative_url }}">
-      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" loading="lazy" width="200" height="300">{% endif %}
-      <span><strong>{{ post.title }}</strong><br><small>{{ post.description }}</small></span>
-    </a>
-  </li>
-{% else %}
-  <li>First guide coming soon.</li>
-{% endfor %}
-</ul>
+
+<section class="wrap features">
+  <h2>Everything a beginner needs. Nothing they don't.</h2>
+  <div class="grid">
+    {% for f in site.data.features %}
+    <div class="feature"><span class="emoji" aria-hidden="true">{{ f.icon }}</span><h3>{{ f.title }}</h3><p>{{ f.text }}</p></div>
+    {% endfor %}
+  </div>
+</section>
+
+{% if site.data.screens and site.data.screens.size > 2 %}
+<section class="screens">
+  <div class="wrap">
+    <h2>A look inside</h2>
+    <div class="strip">
+      {% for s in site.data.screens %}<figure><img src="{{ s.src | relative_url }}" alt="{{ s.alt }}" loading="lazy" width="390" height="664"><figcaption>{{ s.alt }}</figcaption></figure>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="wrap steps">
+  <h2>How it works</h2>
+  <ol>
+    <li><strong>Tell it your goal.</strong> A short onboarding asks about your goal and activity level.</li>
+    <li><strong>Build your first workout.</strong> Pick exercises from the library and set your sets and reps.</li>
+    <li><strong>Train and track.</strong> The rest timer keeps you on pace; log meals and weight as you go.</li>
+  </ol>
+</section>
+
+<section class="wrap plans">
+  <h2>Try everything free for 5 days</h2>
+  <p class="muted">After the trial, core tracking stays free. Unlock everything with Premium. Prices are shown in the App Store in your currency.</p>
+  <div class="grid">
+    <div class="plan"><h3>Monthly</h3><p>Premium, billed monthly. Cancel anytime.</p></div>
+    <div class="plan best"><span class="tag">Best value</span><h3>Yearly</h3><p>Premium for a year, much cheaper per month.</p></div>
+    <div class="plan"><h3>Lifetime</h3><p>Pay once, keep Premium. No subscription.</p></div>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="wrap latest">
+  <div class="row"><h2>Latest guides</h2><a class="link" href="{{ '/blog/' | relative_url }}">All guides →</a></div>
+  <div class="grid">{% for p in site.posts limit: 6 %}{% include post-card.html post=p %}{% endfor %}</div>
+</section>
+{% endif %}
+
+<section class="wrap faq">
+  <h2>Questions</h2>
+  {% for f in site.data.faq %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Your first gym week starts here.</h2>
+    {% include app-badge.html %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":{{ site.app_name | jsonify }},
+ "operatingSystem":"iOS","applicationCategory":"HealthApplication","description":{{ site.description | jsonify }},
+ "url":{{ '/' | absolute_url | jsonify }},"downloadUrl":{{ site.app_link | jsonify }},
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"5-day free trial, in-app purchases"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in site.data.faq %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+</script>

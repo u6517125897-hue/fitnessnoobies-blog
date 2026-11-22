@@ -1,0 +1,13 @@
+# slug = the `topic` the agent sets on each article (config.yaml platforms.blog.categories)
+- slug: workouts
+  name: Workouts
+  blurb: Simple routines, exercise how-tos and gym basics.
+- slug: nutrition
+  name: Nutrition
+  blurb: Protein, macros and easy meals without the confusion.
+- slug: weight-loss
+  name: Weight Loss
+  blurb: Realistic fat loss, scale weight and progress tracking.
+- slug: beginner-tips
+  name: Beginner Tips
+  blurb: Gym anxiety, habits, rest and everything nobody tells you.

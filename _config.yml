@@ -1,17 +1,26 @@
-# Jekyll site built by GitHub Pages (no build step needed). Articles are added by the marketing agent.
-title: FitnessNoobies Blog
-description: Simple, beginner-friendly gym, nutrition and progress guides from the FitnessNoobies app.
+# Jekyll site built by GitHub Pages (no build step). Articles and images are added by the marketing agent.
+title: FitnessNoobies
+tagline: The simple gym app for beginners
+description: Plan workouts, track meals and macros, and follow your weight trend in one simple iPhone app. Plus free beginner guides to training and nutrition.
 url: https://u6517125897-hue.github.io
 baseurl: /fitnessnoobies-blog
 permalink: /:title/
 timezone: Europe/Berlin
 future: true   # articles are committed at their publish time; avoids timezone edge cases
 lang: en
-app_name: FitnessNoobies
-app_link: https://apps.apple.com/app/apple-store/id0000000000?ct=blog-home&mt=8
-goatcounter: ""   # e.g. fitnessnoobies  ->  https://fitnessnoobies.goatcounter.com
+logo: /assets/img/icon.png
+# --- kept in sync by the marketing agent (config.yaml) ---
+app_name: "FitnessNoobies"
+app_store_id: ""
+app_link: "https://apps.apple.com/app/apple-store/id0000000000?ct=blog-home&mt=8"
+goatcounter: ""
+pinterest_verify: ""
+# ----------------------------------------------------------
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 exclude: [README.md]
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }

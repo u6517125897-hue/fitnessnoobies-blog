@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign cat = site.data.categories | where: "slug", page.topic | first %}
+{% assign posts = site.posts | where: "topic", page.topic %}
+<section class="wrap page-head">
+  <nav class="crumbs"><a href="{{ '/blog/' | relative_url }}">Guides</a></nav>
+  <h1>{{ cat.name }}</h1>
+  <p class="lead">{{ cat.blurb }}</p>
+</section>
+<section class="wrap">
+  {% if posts.size > 0 %}<div class="grid">{% for p in posts %}{% include post-card.html post=p %}{% endfor %}</div>
+  {% else %}<p class="muted">Guides in this category are coming soon. <a href="{{ '/blog/' | relative_url }}">See all guides</a>.</p>{% endif %}
+</section>

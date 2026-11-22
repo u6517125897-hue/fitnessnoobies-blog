@@ -1,20 +1,36 @@
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% seo %}
-  {% feed_meta %}
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-</head>
+<head>{% include head.html %}</head>
 <body>
   <header class="site">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <a class="get" href="{{ site.app_link }}">Get the app</a>
+    <div class="wrap nav">
+      <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/icon.png' | relative_url }}" alt="" width="32" height="32">{{ site.app_name }}</a>
+      <nav>
+        <a href="{{ '/blog/' | relative_url }}">Guides</a>
+        <a class="get" href="{{ site.app_link }}">Get the app</a>
+      </nav>
+    </div>
   </header>
   <main>{{ content }}</main>
   <footer class="site">
-    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.app_name }} · <a href="{{ '/privacy/' | relative_url }}">Privacy</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+    <div class="wrap foot">
+      <div>
+        <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/icon.png' | relative_url }}" alt="" width="28" height="28">{{ site.app_name }}</a>
+        <p>{{ site.tagline }}. iPhone only for now, Android coming later.</p>
+      </div>
+      <div>
+        <strong>Guides</strong>
+        {% for c in site.data.categories %}<a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a>{% endfor %}
+      </div>
+      <div>
+        <strong>{{ site.app_name }}</strong>
+        <a href="{{ site.app_link }}">App Store</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+    <p class="wrap legal">&copy; {{ 'now' | date: '%Y' }} {{ site.app_name }}. Guides are general information, not medical advice.</p>
   </footer>
   {% if site.goatcounter != "" %}
   <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

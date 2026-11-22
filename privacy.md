@@ -3,6 +3,8 @@ layout: default
 title: Privacy policy
 permalink: /privacy/
 ---
+<div class="wrap narrow content" markdown="1">
+
 # Privacy policy
 
 This blog does not use cookies and does not collect personal data. Visit counts are measured with
@@ -13,3 +15,5 @@ Links to the App Store include a campaign tag so we can see which article led to
 numbers to us only in aggregate.
 
 For the {{ site.app_name }} app's own privacy policy, see its App Store page. Questions: contact us via the App Store page.
+
+</div>

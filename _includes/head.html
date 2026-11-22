@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+{% feed_meta %}
+{% if site.app_store_id != "" %}<meta name="apple-itunes-app" content="app-id={{ site.app_store_id }}">{% endif %}
+{% if site.pinterest_verify != "" %}<meta name="p:domain_verify" content="{{ site.pinterest_verify }}">{% endif %}
+<meta name="theme-color" content="#16A34A">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">

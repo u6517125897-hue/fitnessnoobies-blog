@@ -1,0 +1,15 @@
+---
+layout: default
+title: Beginner gym & nutrition guides
+description: Free, practical guides for gym beginners: workouts, nutrition, weight loss and gym basics.
+---
+<section class="wrap page-head">
+  <h1>Beginner guides</h1>
+  <p class="lead">Practical, no-jargon guides to training, eating and tracking progress.</p>
+  <nav class="chips">{% for c in site.data.categories %}<a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a>{% endfor %}</nav>
+</section>
+<section class="wrap">
+  {% if site.posts.size > 0 %}
+  <div class="grid">{% for p in site.posts %}{% include post-card.html post=p %}{% endfor %}</div>
+  {% else %}<p class="muted">The first guide is on its way.</p>{% endif %}
+</section>

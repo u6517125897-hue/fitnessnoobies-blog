@@ -1,4 +1,7 @@
-<div class="cta">
-  <p><strong>Track it in {{ site.app_name }}.</strong> Log your workouts with a rest timer, your meals and macros, and your weight trend in one simple iPhone app. Try every feature free for 5 days.</p>
-  <a class="button" href="{{ include.link | default: site.app_link }}">Download on the App Store</a>
-</div>
+<aside class="cta">
+  <img src="{{ '/assets/img/icon.png' | relative_url }}" alt="" width="64" height="64">
+  <div>
+    <p><strong>Put this into practice with {{ site.app_name }}.</strong> Build your workout, train with the rest timer, log meals and follow your weight trend, in one simple iPhone app. Every feature free for 5 days.</p>
+    {% include app-badge.html link=include.link %}
+  </div>
+</aside>

@@ -1,16 +1,41 @@
 ---
 layout: default
 ---
-<article>
+{% assign cat = site.data.categories | where: "slug", page.topic | first %}
+{% assign words = content | strip_html | number_of_words %}
+<article class="wrap narrow post">
+  <nav class="crumbs"><a href="{{ '/blog/' | relative_url }}">Guides</a>{% if cat %} › <a href="{{ '/category/' | append: cat.slug | append: '/' | relative_url }}">{{ cat.name }}</a>{% endif %}</nav>
   <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date: "%B %-d, %Y" }}</p>
-  {% if page.image %}<img class="hero" src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" width="500" height="750">{% endif %}
-  {{ content }}
+  <p class="meta">{{ page.date | date: "%B %-d, %Y" }} · {{ words | divided_by: 220 | plus: 1 }} min read</p>
+  {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  {% if page.image %}
+  <figure class="pin">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" width="1000" height="1500"
+         data-pin-description="{{ page.pin_description | default: page.description | escape }}">
+  </figure>
+  {% endif %}
+  <nav class="toc" id="toc" hidden><strong>In this guide</strong><ol></ol></nav>
+  <div class="content">{{ content }}</div>
   {% include app-cta.html link=page.app_link %}
 </article>
-{% assign related = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}
+{% assign related = site.posts | where: "topic", page.topic | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}
+{% if related.size == 0 %}{% assign related = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}{% endif %}
 {% if related.size > 0 %}
-<aside class="related"><h2>More guides</h2><ul>
-{% for p in related %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
-</ul></aside>
+<section class="wrap related">
+  <h2>Keep reading</h2>
+  <div class="grid">{% for p in related %}{% include post-card.html post=p %}{% endfor %}</div>
+</section>
 {% endif %}
+<script>
+  (function () {
+    var hs = document.querySelectorAll('.content h2');
+    if (hs.length < 3) return;
+    var ol = document.querySelector('#toc ol');
+    hs.forEach(function (h, i) {
+      if (!h.id) h.id = 'section-' + (i + 1);
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent; li.appendChild(a); ol.appendChild(li);
+    });
+    document.getElementById('toc').hidden = false;
+  })();
+</script>
