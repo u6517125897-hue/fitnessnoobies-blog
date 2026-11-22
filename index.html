@@ -1,0 +1,20 @@
+---
+layout: default
+title: Beginner gym & nutrition guides
+---
+<section class="intro">
+  <h1>Gym guides for beginners</h1>
+  <p>{{ site.description }}</p>
+</section>
+<ul class="posts">
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" loading="lazy" width="200" height="300">{% endif %}
+      <span><strong>{{ post.title }}</strong><br><small>{{ post.description }}</small></span>
+    </a>
+  </li>
+{% else %}
+  <li>First guide coming soon.</li>
+{% endfor %}
+</ul>
