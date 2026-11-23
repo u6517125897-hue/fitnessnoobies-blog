@@ -10,6 +10,8 @@ future: true   # articles are committed at their publish time; avoids timezone e
 lang: en
 logo: /assets/img/icon.png
 pinterest_url: "https://www.pinterest.com/fitnessnoobiesapp/"
+webmaster_verifications:   # Google Search Console (jekyll-seo-tag outputs the meta tag)
+  google: "CpgSs87GwLSBfriA_7hieFSVkb8zdey3QbLw-JINziA"
 # --- kept in sync by the marketing agent (config.yaml) ---
 app_name: "FitnessNoobies"
 app_store_id: "6812446704"
