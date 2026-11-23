@@ -12,6 +12,7 @@ logo: /assets/img/icon.png
 pinterest_url: "https://www.pinterest.com/fitnessnoobiesapp/"
 webmaster_verifications:   # Google Search Console (jekyll-seo-tag outputs the meta tag)
   google: "CpgSs87GwLSBfriA_7hieFSVkb8zdey3QbLw-JINziA"
+pin_feeds_since: 2026-11-24   # Pinterest RSS feeds only include articles from this date (older ones were pinned by hand)
 # --- kept in sync by the marketing agent (config.yaml) ---
 app_name: "FitnessNoobies"
 app_store_id: "6812446704"

@@ -1,0 +1,30 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{{ site.app_name | xml_escape }}: {{ page.board | xml_escape }}</title>
+  <link>{{ '/' | absolute_url }}</link>
+  <description>{{ page.board | xml_escape }} pins from {{ site.title | xml_escape }}</description>
+  <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml"/>
+  {%- assign since = site.pin_feeds_since | date: "%s" | plus: 0 %}
+  {%- assign posts = site.posts | where: "topic", page.topic %}
+  {%- for post in posts limit: 30 %}
+  {%- assign t = post.date | date: "%s" | plus: 0 %}
+  {%- if t >= since %}
+  {%- for pin in post.pins %}
+  <item>
+    <title>{{ pin.title | xml_escape }}</title>
+    <link>{{ post.url | absolute_url }}</link>
+    <guid isPermaLink="false">{{ post.url | absolute_url }}#pin-{{ forloop.index }}</guid>
+    <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+    <description>{{ pin.description | xml_escape }}</description>
+    <enclosure url="{{ pin.image | absolute_url }}" type="image/png" length="0"/>
+    <media:content url="{{ pin.image | absolute_url }}" medium="image" type="image/png"/>
+  </item>
+  {%- endfor %}
+  {%- endif %}
+  {%- endfor %}
+</channel>
+</rss>
