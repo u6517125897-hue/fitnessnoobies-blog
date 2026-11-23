@@ -18,6 +18,7 @@ faq:
   - q: "What are easy ways to get more protein?"
     a: "Add a protein source to every meal and keep a few snacks like Greek yogurt or boiled eggs on hand. Swapping regular yogurt for Greek yogurt or skyr is an easy upgrade. Small changes across the day add up quickly."
 image: /assets/pins/how-much-protein-do-i-need-1.png
+pinned_manually: true   # pins were uploaded by hand; keep out of the Pinterest RSS feeds
 ---
 
 If you've just started going to the gym, protein comes up everywhere: shakes, bars, high protein labels on everything. So it's fair to ask: how much protein do I need, really? The honest answer is probably a bit more than you eat now, and a lot less complicated than the internet makes it sound.

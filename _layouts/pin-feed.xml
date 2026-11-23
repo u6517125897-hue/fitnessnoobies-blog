@@ -8,11 +8,9 @@ layout: null
   <link>{{ '/' | absolute_url }}</link>
   <description>{{ page.board | xml_escape }} pins from {{ site.title | xml_escape }}</description>
   <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml"/>
-  {%- assign since = site.pin_feeds_since | date: "%s" | plus: 0 %}
   {%- assign posts = site.posts | where: "topic", page.topic %}
   {%- for post in posts limit: 30 %}
-  {%- assign t = post.date | date: "%s" | plus: 0 %}
-  {%- if t >= since %}
+  {%- unless post.pinned_manually %}
   {%- for pin in post.pins %}
   <item>
     <title>{{ pin.title | xml_escape }}</title>
@@ -24,7 +22,7 @@ layout: null
     <media:content url="{{ pin.image | absolute_url }}" medium="image" type="image/png"/>
   </item>
   {%- endfor %}
-  {%- endif %}
+  {%- endunless %}
   {%- endfor %}
 </channel>
 </rss>

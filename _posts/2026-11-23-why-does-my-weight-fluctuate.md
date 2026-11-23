@@ -18,6 +18,7 @@ faq:
   - q: "Why does my weight fluctuate so much on a diet?"
     a: "When you change what you eat, your water and carb stores shift, which can cause bigger swings at first. Salty meals, big weekends and hard workouts add to it. Focus on your weekly average over several weeks rather than daily numbers."
 image: /assets/pins/why-does-my-weight-fluctuate-1.png
+pinned_manually: true   # pins were uploaded by hand; keep out of the Pinterest RSS feeds
 ---
 
 You weigh yourself on Monday and feel good. Tuesday morning, the number is up a whole kilo. You didn't eat a cake. You even trained. So why does my weight fluctuate like this? If you've asked that question, you're in good company. Day-to-day jumps are normal, and once you understand them, the scale gets a lot less scary.

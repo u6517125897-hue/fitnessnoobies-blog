@@ -18,6 +18,7 @@ faq:
   - q: "Does rest time matter for building muscle?"
     a: "Yes, mostly because it affects how well you perform your next set. Rest long enough to complete your reps with good form. For most beginners, 1–2 minutes is a solid range."
 image: /assets/pins/rest-between-sets-beginners-1.png
+pinned_manually: true   # pins were uploaded by hand; keep out of the Pinterest RSS feeds
 ---
 
 You finish a set, put the dumbbells down, and then what? Thirty seconds? Five minutes? Scrolling your phone until you forget which set you're on? Knowing how long to rest between sets is a small thing that makes a big difference. Rest too little and your next set falls apart. Rest too long and your workout drags on forever.

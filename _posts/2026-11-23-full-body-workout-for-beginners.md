@@ -18,6 +18,7 @@ faq:
   - q: "Should beginners use machines or free weights?"
     a: "Both are fine. Machines can feel easier to learn, while dumbbells also train balance and coordination. Use whatever feels comfortable and swap exercises if equipment is busy."
 image: /assets/pins/full-body-workout-for-beginners-1.png
+pinned_manually: true   # pins were uploaded by hand; keep out of the Pinterest RSS feeds
 ---
 
 Your first time at the gym can feel like walking into a room where everyone knows the rules except you. Good news: you don't need a complicated plan. A simple full body workout for beginners, done two or three times a week, is one of the best ways to start. It trains every major muscle group, keeps sessions short and gives you lots of practice with the basic moves.
